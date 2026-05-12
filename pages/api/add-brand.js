@@ -1,7 +1,9 @@
+export const config = { api: { bodyParser: true } };
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
   const TOKEN = process.env.NOTION_TOKEN;
-  const SUGGESTIONS_DB = '91468519-de4b-4623-9808-60671cf0b91e';
+  const SUGGESTIONS_DB = 'edb27959-8f75-4637-aa08-71d4bb2ecf7c';
   const { brand, sector, reason } = req.body;
   if (!brand) return res.status(400).json({ error: 'Nom requis' });
 
